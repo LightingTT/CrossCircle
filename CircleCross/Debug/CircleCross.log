@@ -1,0 +1,4 @@
+﻿  Field.cpp
+C:\Users\Inni\source\repos\CircleCross\CircleCross\Field.cpp(39,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Inni\source\repos\CircleCross\CircleCross\Field.cpp(39,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CircleCross.vcxproj -> C:\Users\Inni\source\repos\CircleCross\Debug\CircleCross.exe
