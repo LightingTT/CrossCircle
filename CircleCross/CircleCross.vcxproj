@@ -141,15 +141,11 @@
   <ItemGroup>
     <ClCompile Include="CircleCross.cpp" />
     <ClCompile Include="Field.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Player_O.cpp" />
-    <ClCompile Include="Player_X.cpp" />
+    <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Field.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Player_O.h" />
-    <ClInclude Include="Player_X.h" />
+    <ClInclude Include="Renderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
