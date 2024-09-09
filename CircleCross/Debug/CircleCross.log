@@ -1,4 +1,46 @@
-﻿  Field.cpp
-C:\Users\Inni\source\repos\CircleCross\CircleCross\Field.cpp(39,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Inni\source\repos\CircleCross\CircleCross\Field.cpp(39,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  CircleCross.vcxproj -> C:\Users\Inni\source\repos\CircleCross\Debug\CircleCross.exe
+﻿  Renderer.cpp
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(19,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(19,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(43,61): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(43,61): warning C4244:         with
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(43,61): warning C4244:         [
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(43,61): warning C4244:             T=float
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(43,61): warning C4244:         ]
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(43,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(43,43): warning C4244:         with
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(43,43): warning C4244:         [
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(43,43): warning C4244:             T=float
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(43,43): warning C4244:         ]
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(44,71): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(44,71): warning C4244:         with
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(44,71): warning C4244:         [
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(44,71): warning C4244:             T=float
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(44,71): warning C4244:         ]
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(44,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(44,49): warning C4244:         with
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(44,49): warning C4244:         [
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(44,49): warning C4244:             T=float
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(44,49): warning C4244:         ]
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(48,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(48,65): warning C4244:         with
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(48,65): warning C4244:         [
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(48,65): warning C4244:             T=float
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(48,65): warning C4244:         ]
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(48,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(48,49): warning C4244:         with
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(48,49): warning C4244:         [
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(48,49): warning C4244:             T=float
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(48,49): warning C4244:         ]
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(49,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(49,65): warning C4244:         with
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(49,65): warning C4244:         [
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(49,65): warning C4244:             T=float
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(49,65): warning C4244:         ]
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(49,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(49,43): warning C4244:         with
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(49,43): warning C4244:         [
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(49,43): warning C4244:             T=float
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(49,43): warning C4244:         ]
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(61,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Inni\source\repos\CrossCircle\CircleCross\Renderer.cpp(61,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CircleCross.vcxproj -> C:\Users\Inni\source\repos\CrossCircle\Debug\CircleCross.exe

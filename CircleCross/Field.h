@@ -1,18 +1,22 @@
-#pragma once
-#include <iostream>
+#ifndef FIELD_H
+#define FIELD_H
+
 #include <SFML/Graphics.hpp>
-class Field
-{
-	int width;
-	int height;
-	sf::RectangleShape cell;
-	sf::RectangleShape field[3][3];
-	sf::RenderWindow window;
+#include <vector>
+#include <iostream>
+
+class Field {
 public:
-	Field();
-	void run();
-	void initializeCells();
-	void drawCells();
 
+    Field();
+    void handleEvent(const sf::Event& event);
+    std::vector<std::vector<char>> getBoard() const
+    {
+        return board;
+    }
+    char getSymbolAt(int row, int col);
+private:
+    std::vector<std::vector<char>> board;
+    char currentSymbol;
 };
-
+#endif // FIELD_H
