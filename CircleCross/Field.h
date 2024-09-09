@@ -10,11 +10,8 @@ public:
 
     Field();
     void handleEvent(const sf::Event& event);
-    std::vector<std::vector<char>> getBoard() const
-    {
-        return board;
-    }
     char getSymbolAt(int row, int col);
+
 private:
     std::vector<std::vector<char>> board;
     char currentSymbol;

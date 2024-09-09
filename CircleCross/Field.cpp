@@ -14,8 +14,14 @@ void Field::handleEvent(const sf::Event& event)
             if (col >= 0 && col < 3 && row >= 0 && row < 3 && board[row][col] == ' ') {
                 board[row][col] = currentSymbol;  // Set the current symbol ('X' or 'O')
 
-                std::cout << "Clicked on row " << row << ", col " << col << " and placed: " << currentSymbol << std::endl;
-                currentSymbol = (currentSymbol == 'X') ? 'O' : 'X';
+                if (currentSymbol == 'X') 
+                {
+                    currentSymbol = 'O';
+                }
+                else 
+                {
+                    currentSymbol = 'X';
+                }
 
             }
         }

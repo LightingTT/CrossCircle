@@ -11,9 +11,9 @@ int main()
     while (window.isOpen()) 
     {
         sf::Event event;
-        while (window.pollEvent(event)) 
+        while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed) 
+            if (event.type == sf::Event::Closed)
             {
                 window.close();
             }
@@ -22,12 +22,7 @@ int main()
                 field.handleEvent(event);
             }
         }
-        
         renderer.render(field);
-        
     }
-   
-
-    return 0;
 }
 
