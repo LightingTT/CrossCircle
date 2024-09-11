@@ -22,6 +22,7 @@ void Renderer::render(Field& field)
             // Get the symbol ('X' or 'O') at this cell from the field
             char symbol = field.getSymbolAt(row, col);
 
+            
             if (symbol == 'X')
             {
                 drawX(row, col);
@@ -30,6 +31,7 @@ void Renderer::render(Field& field)
             {
                 drawO(row, col);
             }
+           
         }
     }
     window.display();
