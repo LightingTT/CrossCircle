@@ -98,7 +98,6 @@ void Field::winState()
     {
         if (board[0][i] == 'X')
         {
-            // send draw function to render and draw a line
             winRowCounter_X_1++;
         }
     }
@@ -113,7 +112,6 @@ void Field::winState()
     {
         if (board[1][i] == 'X')
         {
-            // send draw function to render and draw a line
             winRowCounter_X_2++;
         }
     }
