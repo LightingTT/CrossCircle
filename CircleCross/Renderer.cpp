@@ -11,11 +11,14 @@ void Renderer::render(Field& field)
     square.setOutlineThickness(2);                 
     square.setOutlineColor(sf::Color::Black);
 
+    int position = field.winPosition;
+    std::cout << "Current WinType: " << winTypeToString(field.winType) << std::endl;
+
     for (int row = 0; row < 3; ++row) 
     {
         for (int col = 0; col < 3; ++col)
         {
-            // Position and draw the grid square
+            // Position and draw the grid square 
             square.setPosition(col * 100, row * 100);
             window.draw(square);
 
@@ -30,6 +33,11 @@ void Renderer::render(Field& field)
             else if (symbol == 'O')
             {
                 drawO(row, col);
+            }
+
+            if (field.winType != WinType::None)
+            {
+                drawWinningLine(field.winType, field.winPosition);
             }
            
         }
@@ -63,6 +71,72 @@ void Renderer::drawO(int row, int col)
     circle.setOutlineThickness(2);
     circle.setFillColor(sf::Color::Transparent);  
     window.draw(circle);
+}
+
+void Renderer::drawWinningLine(const WinType winType, int position)
+{
+    if (winType == WinType::Row) 
+    {
+       
+    }
+    else if (winType == WinType::Column) 
+    {
+        if (position == 0)
+        {
+            sf::Vertex line[] = {
+            sf::Vertex(sf::Vector2f(((position + 1) * 100) - 50, 0), sf::Color::Black),  // Starting point
+            sf::Vertex(sf::Vector2f(((position + 1) * 100) - 50, 300), sf::Color::Black),  // Ending point
+            };
+
+            window.draw(line, 2, sf::Lines);
+        }
+        if (position == 1)
+        {
+            sf::Vertex line[] = {
+            sf::Vertex(sf::Vector2f(((position + 1) * 100) - 50, 0), sf::Color::Black),  // Starting point
+            sf::Vertex(sf::Vector2f(((position + 1) * 100) - 50, 300), sf::Color::Black),  // Ending point
+            };
+
+            window.draw(line, 2, sf::Lines);
+        }
+        if (position == 2)
+        {
+            sf::Vertex line[] = {
+            sf::Vertex(sf::Vector2f(((position + 1) * 100) - 50, 0), sf::Color::Black),  // Starting point
+            sf::Vertex(sf::Vector2f(((position + 1) * 100) - 50, 300), sf::Color::Black),  // Ending point
+            };
+
+            window.draw(line, 2, sf::Lines);
+        }
+        
+    }
+    else if (winType == WinType::DiagonalMain) 
+    {
+        
+    }
+    else if (winType == WinType::DiagonalAnti) 
+    {
+        
+    }
+}
+
+std::string Renderer::winTypeToString(WinType winType)
+{
+    switch (winType)
+    {
+    case WinType::None:
+        return "None";
+    case WinType::Row:
+        return "Row";
+    case WinType::Column:
+        return "Column";
+    case WinType::DiagonalMain:
+        return "Diagonal Main";
+    case WinType::DiagonalAnti:
+        return "Diagonal Anti";
+    default:
+        return "Unknown";
+    }
 }
 
 std::ostream& operator<<(std::ostream& os, const std::vector<std::vector<char>>& board)

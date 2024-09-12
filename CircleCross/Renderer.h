@@ -11,6 +11,8 @@ public:
     void drawX(int row, int col);
 
     void drawO(int row, int col);
+    void drawWinningLine(WinType, int);
+    std::string winTypeToString(WinType winType);
 };
 
 std::ostream& operator<<(std::ostream& os, const std::vector<std::vector<char>>& board);
