@@ -159,7 +159,6 @@ void Renderer::displayWinPopup(const std::string& message)
     popupBackground.setFillColor(sf::Color(0, 0, 0, 150));
     popupBackground.setPosition(50, 100);
 
-    
     sf::Font font;
     font.loadFromFile("E.otf"); 
 
