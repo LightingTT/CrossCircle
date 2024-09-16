@@ -2,6 +2,7 @@
 
 Renderer::Renderer(sf::RenderWindow& window) : window(window) {}
 
+// Render the board. Game state handled in Field class
 void Renderer::render(Field& field)
 {
     window.clear();
@@ -10,9 +11,6 @@ void Renderer::render(Field& field)
     square.setFillColor(sf::Color::White);
     square.setOutlineThickness(2);                 
     square.setOutlineColor(sf::Color::Black);
-
-    int position = field.winPosition;
-    std::cout << "Current WinType: " << winTypeToString(field.winType) << std::endl;
 
     for (int row = 0; row < 3; ++row) 
     {
@@ -34,15 +32,14 @@ void Renderer::render(Field& field)
             {
                 drawO(row, col);
             }
-
-            if (field.winType != WinType::None)
-            {
-                drawWinningLine(field.winType, field.winPosition);
-            }
-           
         }
     }
-    window.display();
+
+    if (field.winType != WinType::None)
+    {
+        drawWinningLine(field.winType, field.winPosition);
+    }
+
 }
 
 void Renderer::drawX(int row, int col)
@@ -70,7 +67,7 @@ void Renderer::drawO(int row, int col)
     circle.setOutlineColor(sf::Color::Black); 
     circle.setOutlineThickness(2);
     circle.setFillColor(sf::Color::Transparent);  
-    window.draw(circle);
+    window.draw(circle); 
 }
 
 void Renderer::drawWinningLine(const WinType winType, int position)
@@ -140,7 +137,7 @@ void Renderer::drawWinningLine(const WinType winType, int position)
             sf::Vertex line[] = {
                 sf::Vertex(sf::Vector2f(0, 0), sf::Color::Black),  
                 sf::Vertex(sf::Vector2f(300, 300), sf::Color::Black),  
-            };
+            }; 
 
             window.draw(line, 2, sf::Lines);
     }
@@ -153,36 +150,27 @@ void Renderer::drawWinningLine(const WinType winType, int position)
 
         window.draw(line, 2, sf::Lines);
     }
+  
 }
 
-std::string Renderer::winTypeToString(WinType winType)
+void Renderer::displayWinPopup(const std::string& message)
 {
-    switch (winType)
-    {
-    case WinType::None:
-        return "None";
-    case WinType::Row:
-        return "Row";
-    case WinType::Column:
-        return "Column";
-    case WinType::DiagonalMain:
-        return "Diagonal Main";
-    case WinType::DiagonalAnti:
-        return "Diagonal Anti";
-    default:
-        return "Unknown";
-    }
+    sf::RectangleShape popupBackground(sf::Vector2f(200, 100));
+    popupBackground.setFillColor(sf::Color(0, 0, 0, 150));
+    popupBackground.setPosition(50, 100);
+
+    
+    sf::Font font;
+    font.loadFromFile("E.otf"); 
+
+    sf::Text text;
+    text.setFont(font);
+    text.setString(message);
+    text.setCharacterSize(24);
+    text.setFillColor(sf::Color::White);
+    text.setPosition(70, 120);
+
+    window.draw(popupBackground);
+    window.draw(text);
 }
 
-std::ostream& operator<<(std::ostream& os, const std::vector<std::vector<char>>& board)
-{
-    for (const auto& row : board) 
-    {
-        for (const auto& cell : row) 
-        {
-            os << cell << ' ';  
-        }
-        os << '\n';  
-    }
-    return os;
-}
