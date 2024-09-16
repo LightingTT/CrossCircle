@@ -9,24 +9,26 @@ void Field::handleEvent(const sf::Event& event)
     {
         if (event.mouseButton.button == sf::Mouse::Left)
         {
+            // Determine which grid user is clicking on. If the user clicks on the first 100 pixels horizontally (x value between 0-99), 
+            // the division by 100 will result in 0, indicating column 0. Same for vertical values.
             int col = event.mouseButton.x / 100;
             int row = event.mouseButton.y / 100;
-            int endStateCounter{ 0 };
+            
             if (col >= 0 && col < 3 && row >= 0 && row < 3 && board[row][col] == ' ') {
                 board[row][col] = currentSymbol;  // Set the current symbol ('X' or 'O')
                 endStateCounter++;
-                winState();
                 isTie(endStateCounter);
+                winState();
+                std::cout << endStateCounter << std::endl;
                 // Change the player
                 if (currentSymbol == 'X') 
                 {
                     currentSymbol = 'O';
                 }
-                else 
+                else
                 {
                     currentSymbol = 'X';
                 }
-
             }
         }
     }
@@ -37,18 +39,22 @@ char Field::getSymbolAt(int row, int col)
     return board[row][col];
 }
 
+char Field::getSymbol()
+{
+    return currentSymbol;
+}
+
 void Field::isTie(int endStateCounter)
 {
     if (endStateCounter == maxMoves)
     {
-        //render tie or something
+        winType = WinType::Draw;
     }
 }
 
 void Field::winState()
 {
-    winType = WinType::None;
-    // X Win conditions
+    // 'X' Win conditions
     // Column win conditions
     int winColCounter_X_1{0};
     for (int i = 0; i < 3; i++)
@@ -126,7 +132,6 @@ void Field::winState()
     {
         if (board[2][i] == 'X')
         {
-            // send draw function to render and draw a line
             winRowCounter_X_3++;
         }
     }
@@ -137,13 +142,11 @@ void Field::winState()
     }
 
     // Diagonal win conditions
-
     int winDiagCounter_X_1{ 0 };
     for (int i = 0, j = 0; i < 3 && j < 3; i++, j++)
     {
         if (board[i][j] == 'X')
         {
-            // send draw function to render and draw a line
             winDiagCounter_X_1++;
         }
     }
@@ -158,7 +161,6 @@ void Field::winState()
     {
         if (board[i][j] == 'X')
         {
-            // send draw function to render and draw a line
             winDiagCounter_X_2++;
         }
     }
@@ -169,18 +171,13 @@ void Field::winState()
         winPosition = -2;
     }
   
-     /*
-     ===========================================================================
-     O Win conditions
-     Column win conditions
-     */
-
+    // 'O' Win conditions
+    // Column win conditions
     int winColCounter_O_1{ 0 };
     for (int i = 0; i < 3; i++)
     {
         if (board[i][0] == 'O')
         {
-            // send draw function to render and draw a line
             winColCounter_O_1++;
         }
     }
@@ -196,7 +193,6 @@ void Field::winState()
     {
         if (board[i][1] == 'O')
         {
-            // send draw function to render and draw a line
             winColCounter_O_2++;
         }
     }
@@ -212,7 +208,6 @@ void Field::winState()
     {
         if (board[i][2] == 'O')
         {
-            // send draw function to render and draw a line
             winColCounter_O_3++;
         }
     }
@@ -229,7 +224,6 @@ void Field::winState()
     {
         if (board[0][i] == 'O')
         {
-            // send draw function to render and draw a line
             winRowCounter_O_1++;
         }
     }
@@ -245,7 +239,6 @@ void Field::winState()
     {
         if (board[1][i] == 'O')
         {
-            // send draw function to render and draw a line
             winRowCounter_O_2++;
         }
     }
@@ -261,7 +254,6 @@ void Field::winState()
     {
         if (board[2][i] == 'O')
         {
-            // send draw function to render and draw a line
             winRowCounter_O_3++;
         }
     }
@@ -273,13 +265,11 @@ void Field::winState()
     }
 
     // Diagonal win conditions
-
     int winDiagCounter_O_1{ 0 };
     for (int i = 0, j = 0; i < 3 && j < 0; i++, j++)
     {
         if (board[i][j] == 'O')
         {
-            // send draw function to render and draw a line
             winDiagCounter_O_1++;
         }
     }
@@ -295,7 +285,6 @@ void Field::winState()
     {
         if (board[i][j] == 'O')
         {
-            // send draw function to render and draw a line
             winDiagCounter_O_2++;
         }
     }
@@ -305,8 +294,6 @@ void Field::winState()
         winType = WinType::DiagonalAnti;
         winPosition = -2;
     }
-
-
 }
 
 
